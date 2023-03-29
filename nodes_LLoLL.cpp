@@ -18,7 +18,7 @@ namespace CS3358_SP2023_A5P2
        while(!Queue.empty()){
            CNode* cNodePtr = Queue.front();
            Queue.pop();
-           cout << cNodePtr->data << "  ";
+           outs << cNodePtr->data << "  ";
            if(cNodePtr->link !=0){
                Queue.push(cNodePtr->link);
            }
