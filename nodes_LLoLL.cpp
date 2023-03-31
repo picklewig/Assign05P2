@@ -8,19 +8,19 @@ namespace CS3358_SP2023_A5P2
 	
    // do breadth-first (level) traversal and print data
    void ShowAll_BF(PNode* pListHead, ostream& outs){
-       cnPtrQueue Queue;
+       cnPtrQueue queue;
        while(pListHead != 0){
            if(pListHead->data != 0){
-               Queue.push(pListHead->data);
+               queue.push(pListHead->data);
            }
            pListHead = pListHead->link;
        }
-       while(!Queue.empty()){
-           CNode* cNodePtr = Queue.front();
-           Queue.pop();
+       while(!queue.empty()){
+           CNode* cNodePtr = queue.front();
+           queue.pop();
            outs << cNodePtr->data << "  ";
            if(cNodePtr->link !=0){
-               Queue.push(cNodePtr->link);
+               queue.push(cNodePtr->link);
            }
        }
    }
